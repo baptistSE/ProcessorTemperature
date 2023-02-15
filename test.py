@@ -4,6 +4,13 @@ import winreg
 from tkinter import messagebox
 import winsound
 import wmi
+import ctypes
+
+# Define a função SetProcessDPIAware
+try:
+    ctypes.windll.shcore.SetProcessDpiAwareness(True)
+except:
+    ctypes.windll.user32.SetProcessDPIAware()
 
 # Cria a janela
 root = tk.Tk()
