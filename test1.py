@@ -30,6 +30,7 @@ root.resizable(False, False)
 #label_temp.pack(pady=10)
 
 # Função para atualizar a temperatura
+
 def update_temp():
     # Conecta ao namespace 'root\WMI'
     w = wmi.WMI(namespace="root\\WMI")
@@ -51,7 +52,7 @@ def update_temp():
         root.attributes('-topmost', 0)
 
     #Agenda a próxima atualização da temperatura em 5 segundos
-    root.after(5000, update_temp)
+    root.after(500, update_temp)
 
 #Inicia a atualização da temperatura
 update_temp()
